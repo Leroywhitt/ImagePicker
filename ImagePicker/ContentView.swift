@@ -14,8 +14,10 @@ struct ContentView: View {
     var body: some View {
         VStack {
             if let data = data, let uiimage = UIImage(data: data){
+               Spacer()
                 Image(uiImage: uiimage)
                     .resizable()
+                    .scaledToFit()
             }
             
             Spacer()
@@ -41,7 +43,7 @@ struct ContentView: View {
                     }
                 case .failure(let failure):
                     fatalError("\(failure)")
-                }
+                  }
                 }
             }
             Spacer()
